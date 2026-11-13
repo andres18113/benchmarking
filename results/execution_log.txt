@@ -1,0 +1,89 @@
+23:39:31  Lab 02 - duplicate detection benchmark
+23:39:31  sizes=[100, 1000, 10000, 100000, 1000000] repetitions=3 seed=2026 A-limit=100,000,000
+23:39:31  Scenario: random_unique - Random data, no duplicates (all unique) - worst case
+23:39:31    random_unique              n=100       A  answer=False comparisons=4,950           mean=      0.1678 ms
+23:39:31    random_unique              n=100       B  answer=False comparisons=100             mean=      0.0064 ms
+23:39:32    random_unique              n=1,000     A  answer=False comparisons=499,500         mean=     19.6791 ms
+23:39:32    random_unique              n=1,000     B  answer=False comparisons=1,000           mean=      0.0648 ms
+23:39:37    random_unique              n=10,000    A  answer=False comparisons=49,995,000      mean=   1821.3574 ms
+23:39:37    random_unique              n=10,000    B  answer=False comparisons=10,000          mean=      0.6377 ms
+23:39:37    random_unique              n=100,000   A SKIPPED (needs 4,999,950,000 comparisons > limit 100,000,000)
+23:39:37    random_unique              n=100,000   B  answer=False comparisons=100,000         mean=      9.1023 ms
+23:39:38    random_unique              n=1,000,000 A SKIPPED (needs 499,999,500,000 comparisons > limit 100,000,000)
+23:39:39    random_unique              n=1,000,000 B  answer=False comparisons=1,000,000       mean=    174.1207 ms
+23:39:39  Scenario: random_with_duplicates - Random data with duplicates (values drawn from [0, n))
+23:39:39    random_with_duplicates     n=100       A  answer=True  comparisons=67              mean=      0.0024 ms
+23:39:39    random_with_duplicates     n=100       B  answer=True  comparisons=8               mean=      0.0014 ms
+23:39:39    random_with_duplicates     n=1,000     A  answer=True  comparisons=26              mean=      0.0014 ms
+23:39:39    random_with_duplicates     n=1,000     B  answer=True  comparisons=18              mean=      0.0014 ms
+23:39:39    random_with_duplicates     n=10,000    A  answer=True  comparisons=158             mean=      0.0045 ms
+23:39:39    random_with_duplicates     n=10,000    B  answer=True  comparisons=159             mean=      0.0071 ms
+23:39:39    random_with_duplicates     n=100,000   A  answer=True  comparisons=22,804          mean=      0.8059 ms
+23:39:39    random_with_duplicates     n=100,000   B  answer=True  comparisons=325             mean=      0.0222 ms
+23:39:40    random_with_duplicates     n=1,000,000 A  answer=True  comparisons=1,221,377       mean=     48.8944 ms
+23:39:40    random_with_duplicates     n=1,000,000 B  answer=True  comparisons=1,583           mean=      0.1229 ms
+23:39:41  Scenario: early_duplicate - Early duplicate (positions 0 and 1) - best case
+23:39:41    early_duplicate            n=100       A  answer=True  comparisons=1               mean=      0.0007 ms
+23:39:41    early_duplicate            n=100       B  answer=True  comparisons=2               mean=      0.0007 ms
+23:39:41    early_duplicate            n=1,000     A  answer=True  comparisons=1               mean=      0.0008 ms
+23:39:41    early_duplicate            n=1,000     B  answer=True  comparisons=2               mean=      0.0009 ms
+23:39:41    early_duplicate            n=10,000    A  answer=True  comparisons=1               mean=      0.0008 ms
+23:39:41    early_duplicate            n=10,000    B  answer=True  comparisons=2               mean=      0.0009 ms
+23:39:41    early_duplicate            n=100,000   A  answer=True  comparisons=1               mean=      0.0008 ms
+23:39:41    early_duplicate            n=100,000   B  answer=True  comparisons=2               mean=      0.0007 ms
+23:39:41    early_duplicate            n=1,000,000 A  answer=True  comparisons=1               mean=      0.0009 ms
+23:39:41    early_duplicate            n=1,000,000 B  answer=True  comparisons=2               mean=      0.0007 ms
+23:39:42  Scenario: late_duplicate - Late duplicate (last two positions only)
+23:39:42    late_duplicate             n=100       A  answer=True  comparisons=4,950           mean=      0.1352 ms
+23:39:42    late_duplicate             n=100       B  answer=True  comparisons=100             mean=      0.0045 ms
+23:39:42    late_duplicate             n=1,000     A  answer=True  comparisons=499,500         mean=     17.0112 ms
+23:39:42    late_duplicate             n=1,000     B  answer=True  comparisons=1,000           mean=      0.0567 ms
+23:39:47    late_duplicate             n=10,000    A  answer=True  comparisons=49,995,000      mean=   1683.3825 ms
+23:39:47    late_duplicate             n=10,000    B  answer=True  comparisons=10,000          mean=      0.5953 ms
+23:39:47    late_duplicate             n=100,000   A SKIPPED (needs 4,999,950,000 comparisons > limit 100,000,000)
+23:39:47    late_duplicate             n=100,000   B  answer=True  comparisons=100,000         mean=      7.4048 ms
+23:39:48    late_duplicate             n=1,000,000 A SKIPPED (needs 499,999,500,000 comparisons > limit 100,000,000)
+23:39:48    late_duplicate             n=1,000,000 B  answer=True  comparisons=1,000,000       mean=    130.5248 ms
+23:39:49  Edge cases
+23:39:49    empty_list                 n=0         A  answer=False comparisons=0               mean=      0.0005 ms
+23:39:49    empty_list                 n=0         B  answer=False comparisons=0               mean=      0.0005 ms
+23:39:49    single_element             n=1         A  answer=False comparisons=0               mean=      0.0004 ms
+23:39:49    single_element             n=1         B  answer=False comparisons=1               mean=      0.0005 ms
+23:39:49    two_equal                  n=2         A  answer=True  comparisons=1               mean=      0.0004 ms
+23:39:49    two_equal                  n=2         B  answer=True  comparisons=2               mean=      0.0005 ms
+23:39:49    two_distinct               n=2         A  answer=False comparisons=1               mean=      0.0005 ms
+23:39:49    two_distinct               n=2         B  answer=False comparisons=2               mean=      0.0006 ms
+23:39:49    all_equal_1000             n=1,000     A  answer=True  comparisons=1               mean=      0.0006 ms
+23:39:49    all_equal_1000             n=1,000     B  answer=True  comparisons=2               mean=      0.0005 ms
+23:39:49    all_unique_sorted_1000     n=1,000     A  answer=False comparisons=499,500         mean=     17.4492 ms
+23:39:49    all_unique_sorted_1000     n=1,000     B  answer=False comparisons=1,000           mean=      0.0855 ms
+23:39:49    all_unique_reversed_1000   n=1,000     A  answer=False comparisons=499,500         mean=     17.6512 ms
+23:39:49    all_unique_reversed_1000   n=1,000     B  answer=False comparisons=1,000           mean=      0.0415 ms
+23:39:49    first_and_last_equal_1000  n=1,000     A  answer=True  comparisons=999             mean=      0.0280 ms
+23:39:49    first_and_last_equal_1000  n=1,000     B  answer=True  comparisons=1,000           mean=      0.0376 ms
+23:39:49    negatives_and_zero         n=5         A  answer=True  comparisons=3               mean=      0.0007 ms
+23:39:49    negatives_and_zero         n=5         B  answer=True  comparisons=4               mean=      0.0007 ms
+23:39:49    negatives_unique           n=5         A  answer=False comparisons=10              mean=      0.0010 ms
+23:39:49    negatives_unique           n=5         B  answer=False comparisons=5               mean=      0.0009 ms
+23:39:49    slide_example              n=8         A  answer=True  comparisons=3               mean=      0.0006 ms
+23:39:49    slide_example              n=8         B  answer=True  comparisons=4               mean=      0.0006 ms
+23:39:49  ------------------------------------------------------------------------------
+23:39:49  timed executions                         174
+23:39:49  executed summaries                       58
+23:39:49  skipped tests                            4
+23:39:49  all answers correct                      True
+23:39:49  a and b pairs compared                   27
+23:39:49  a and b always agree                     True
+23:39:49  counters match prediction                True
+23:39:49  results consistent across repetitions    True
+23:39:49  datasets unchanged by algorithms         True
+23:39:49  all checks passed                        True
+23:39:49  Skipped tests (not executed, no values invented):
+23:39:49    random_unique / A / n=100,000 -> needs 4,999,950,000 comparisons > limit 100,000,000
+23:39:49    random_unique / A / n=1,000,000 -> needs 499,999,500,000 comparisons > limit 100,000,000
+23:39:49    late_duplicate / A / n=100,000 -> needs 4,999,950,000 comparisons > limit 100,000,000
+23:39:49    late_duplicate / A / n=1,000,000 -> needs 499,999,500,000 comparisons > limit 100,000,000
+23:39:49  Excel reopened with openpyxl and verified: OK
+23:39:49  Excel workbook: /mnt/c/Users/Andres/IdeaProjects/Benchmarking/laboratorio-02-eficiencia-complejidad/results/benchmark_results.xlsx
+23:39:49  Other results : /mnt/c/Users/Andres/IdeaProjects/Benchmarking/laboratorio-02-eficiencia-complejidad/results
+23:39:49  Total benchmark time: 17.3 s
